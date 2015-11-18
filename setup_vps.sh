@@ -15,7 +15,7 @@ PORT=$3
 #ssh-copy-id -i ~/.ssh/id_rsa.pub root@$IP
 
 # install chef
-cd ./chef && knife solo prepare root@$IP
+cd ./chef && knife solo prepare root@$IP 
 
 # execute the run list
 knife solo cook root@$IP
