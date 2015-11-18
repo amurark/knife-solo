@@ -1,0 +1,24 @@
+{
+  "run_list" : [
+    "recipe[expertiza]",
+    "recipe[expertiza::users]",
+    "recipe[expertiza::ssh]",
+    #"recipe[expertiza::nginx]",
+    "recipe[expertiza::app]"
+  ],
+  "group": "admins",
+  "port": 12345,
+
+  "user": {
+    "name": "deps",
+    "password": "$1$EZrSF5Uc$ZmQ30G/rJeQcsT5z0XRqK1"
+  },
+
+  "db": {
+    "root_password": "",
+    "user": {
+      "name": "deps",
+      "password": ""
+    }
+  }
+}
