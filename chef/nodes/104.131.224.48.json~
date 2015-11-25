@@ -1,0 +1,15 @@
+{   "run_list": [
+    "recipe[expertiza]" ,
+    "recipe[expertiza::expertiza_clone]"
+    "recipe[expertiza::nginx]"
+  ],
+
+  "group": "root",
+  "port": 22,
+
+  "user": {
+    "name": "root",
+    "password": "password-shadow-hash"
+  }
+}
+
