@@ -127,6 +127,3 @@ PLATFORMS
 
 DEPENDENCIES
   knife-solo (~> 0.4.2)
-
-BUNDLED WITH
-   1.10.6
