@@ -9,14 +9,14 @@
 
 #cloning Expertiza from git repo
 
-directory "/home/Expetiza_demo2" do
+directory "/home/#{node['user']['name']}/" do
   owner 	'root'
   group 	'root'
   mode 		'0754'
   action 	:create
 end
 
-git "/home/Expetiza_demo2" do
+git "/home/#{node['user']['name']}/#{node['app']}" do
   #environment 	production                   
   repository	"https://github.com/expertiza/expertiza.git"
   reference		"master"                
