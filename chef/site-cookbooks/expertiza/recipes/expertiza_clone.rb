@@ -10,9 +10,9 @@
 #cloning Expertiza from git repo
 
 directory "/home/#{node['user']['name']}/" do
-  owner 	'root'
-  group 	'root'
-  mode 		'0754'
+  owner 	"#{node['user']['name']}"
+  group 	"#{node['group']}"
+  mode 		'0754'#check this once, should be 754 or 774, or should the group owner and group be deps and admin respectively
   action 	:create
 end
 
