@@ -28,7 +28,7 @@ end
 
 
 bash "bundle install" do
-cwd "/home/Expetiza_demo2"
+cwd "/home/root/expertiza"
 code <<-EOH
  bundle install
 EOH
