@@ -21,10 +21,13 @@ ENV['DEBIAN_FRONTEND']='noninteractive'
 
 bash 'env_test0' do
   code <<-EOF
-  apt-get -y install mysql-server-5.5 > /home/abzter/mysql-server_install.txt
-  echo $DEBIAN_FRONTEND > /home/abzter/env.txt
+  apt-get -y install mysql-server-5.5 
+  echo $DEBIAN_FRONTEND  
 EOF
 end
+
+#> /home/abzter/env.txt
+#> /home/abzter/mysql-server_install.txt
 
 =begin
 execute "apt-get -y install mysql-server-5.5" do
@@ -44,4 +47,3 @@ execute "apt-get -y install mysql-server"
 execute "service mysql enable"
 execute "service mysql start"
 =end
-
