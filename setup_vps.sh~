@@ -13,7 +13,6 @@ PORT=$3
 
 # upload key for root
 #ssh-copy-id -i ~/.ssh/id_rsa.pub root@$IP
-scp /home/ankit/Downloads/expertiza_scrubbed_2015_08_14.sql.tar.gz root@$IP:/home
 
 # install chef
 cd ./chef && knife solo prepare root@$IP 
