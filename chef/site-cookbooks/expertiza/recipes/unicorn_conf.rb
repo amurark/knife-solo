@@ -1,6 +1,10 @@
-# set custom nginx config
+execute 'Install unicorn Gem' do
+cwd '/home/root/expertiza'
+command 'gem install unicorn'
+end
+
+# set custom Unicorn config
 template "/home/root/expertiza/config/unicorn.rb" do
-#template "/home/root/expertiza/xyz/defaulttt.conf" do
   source "unicorn.rb.erb"
   mode '0755'
   owner 'root'
