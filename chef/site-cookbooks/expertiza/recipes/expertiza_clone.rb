@@ -19,6 +19,7 @@ end
 git "/home/#{node['user']['name']}/#{node['app']}" do
   #environment 	production                   
   repository	"https://github.com/expertiza/expertiza.git"
+  repository	"#{node['expertiza_clone']['github']}"
   reference		"master"                
   action		:sync                     
 end
