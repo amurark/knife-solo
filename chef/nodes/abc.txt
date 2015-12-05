@@ -27,6 +27,18 @@
   },
    "expertiza_clone": {
 	"github":"https://github.com/expertiza/expertiza.git"
+  },
+   "nginx": {
+	"default":"/etc/nginx/sites-enabled/default",
+	"default_conf":"/etc/nginx/conf.d/default.conf",
+	"mode":"0755",
+	"default_file":"default.conf.erb"
+  },
+   "server": {
+	"expertiza":"/home/root/expertiza"
+  },
+   "config": { 
+    "exp_path" : "/home/root/expertiza",
+    "public_path" : "/home/root/expertiza/public"
   }
 }
-
