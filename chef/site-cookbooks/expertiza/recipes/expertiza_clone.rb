@@ -12,13 +12,11 @@
 directory "/home/#{node['user']['name']}/" do
   owner 	"#{node['user']['name']}"
   group 	"#{node['group']}"
-  mode 		'0754'#check this once, should be 754 or 774, or should the group owner and group be deps and admin respectively
+  mode 		"#{node['expertiza_clone']['mode']}"
   action 	:create
 end
 
 git "/home/#{node['user']['name']}/#{node['app']}" do
-  #environment 	production                   
-  #repository	"https://github.com/expertiza/expertiza.git"
   repository	"#{node['expertiza_clone']['github']}"
   reference		"master"                
   action		:sync                     

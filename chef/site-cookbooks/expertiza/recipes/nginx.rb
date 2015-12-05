@@ -1,7 +1,7 @@
 package "nginx"
 
 # remove default nginx config
-default_path = "/etc/nginx/sites-enabled/default"
+default_path = "#{node['nginx']['default']}"
 execute "rm -f #{default_path}" do
   only_if { File.exists?(default_path) }
 end
@@ -13,12 +13,9 @@ service "nginx" do
 end
 
 # set custom nginx config
-template "/etc/nginx/conf.d/default.conf" do
-#template "/home/root/expertiza/xyz/defaulttt.conf" do
-  source "default.conf.erb"
-  mode '0755'
+template "#{node['nginx']['default_conf']}" do
+  source "#{node['nginx']['default_file']}"
+  mode "#{node['nginx']['mode']}"
   owner 'root'
-  #group 'root'
-#  notifies :restart, "service[nginx]", :delayed
 end
 
