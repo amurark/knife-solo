@@ -16,7 +16,7 @@ PORT=$3
 scp /home/ankit/Downloads/expertiza_scrubbed_2015_08_14.sql.tar.gz root@$IP:/home
 
 # install chef
-cd ./chef && knife solo prepare root@$IP 
+cd ./chef && knife solo prepare -V root@$IP 
 
 # execute the run list
 knife solo cook root@$IP
