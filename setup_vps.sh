@@ -1,22 +1,24 @@
-#!/bin/sh
 
-# check for correct number of arguments
+# Checking for the correct number of arguments
 if [ $# -ne 3 ]; then
   echo "Usage: $0 <user> <ip> <port>"
   exit 1
 fi
 
-# set variables
+# Setting variables
 USER=$1
 IP=$2
 PORT=$3
 
-# upload key for root
-#ssh-copy-id -i ~/.ssh/id_rsa.pub root@$IP
-scp /home/ankit/Downloads/expertiza_scrubbed_2015_08_14.sql.tar.gz root@$IP:/home
+#Copying scrubbed db to the remote server
+echo "==== Copying scrubbed db to the remote server! ===="
+scp ./expertiza_scrubbed_2015_08_14.sql.tar.gz root@$IP:/home
+echo "==== Scrubbed db copied to the remote server successfully! ===="
 
-# install chef
+# Installing knife solo
+echo "==== Initiating knife solo! ===="
 cd ./chef && knife solo prepare -V root@$IP 
 
-# execute the run list
+# Executing the run list
+echo "====  Executing the runlist! ===="
 knife solo cook root@$IP

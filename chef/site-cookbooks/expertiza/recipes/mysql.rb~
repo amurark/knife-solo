@@ -1,5 +1,5 @@
 
-# Installing packages for mysql client
+# Installing packages for mysql
 puts "==== Installing packages for mysql client! ===="
 package "debconf-utils"
 package "libmysqlclient-dev"

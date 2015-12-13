@@ -1,5 +1,5 @@
 
-#Setting the JAVA_HOME environment variable
+#Setting the JAVA_HOME environment variable.
 puts "==== Setting the JAVA_HOME environment variable! ===="
 ruby_block "set-env-java-home" do
   block do
@@ -8,12 +8,12 @@ ruby_block "set-env-java-home" do
   not_if { ENV["JAVA_HOME"] == node['java']['java_home'] }
 end
 
-#Creating directory for java configuration files
+#Creating directory for java configuration files.
 directory "/etc/profile.d" do
   mode 00755
 end
 
-#Creating the shell file for jdk(Java Development Kit)
+#Creating the shell file for jdk(Java Development Kit).
 file "/etc/profile.d/jdk.sh" do
   content "export JAVA_HOME = #{node['java']['java_home']}"
   mode 00755
