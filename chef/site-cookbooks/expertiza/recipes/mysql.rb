@@ -9,8 +9,6 @@ puts "==== Packages for mysql client installed successfully! ===="
 execute 'echo mysql-server-5.5 mysql-server/root_password password #{node["mysql"]["password"]} | debconf-set-selections '
 execute 'echo mysql-server-5.5 mysql-server/root_password_again password #{node["mysql"]["password"]} | debconf-set-selections '
 
-ENV['DEBIAN_FRONTEND']='noninteractive'
-
 # Installing mysql server
 puts " ==== Installing the mysql server! ===="
 bash 'env_test0' do
