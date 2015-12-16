@@ -1,3 +1,3 @@
 # knife-solo
 
-** Automated Deployment for Expertiza
+## Automated Deployment for Expertiza
